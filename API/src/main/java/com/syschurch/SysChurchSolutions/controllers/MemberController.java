@@ -1,36 +1,37 @@
 package com.syschurch.SysChurchSolutions.controllers;
 
+import com.syschurch.SysChurchSolutions.dto.MemberDto;
 import com.syschurch.SysChurchSolutions.exceptions.ResourceNotFoundException;
 import com.syschurch.SysChurchSolutions.models.Member;
-import com.syschurch.SysChurchSolutions.repository.MemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.syschurch.SysChurchSolutions.services.MemberService;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v1/members")
+@AllArgsConstructor
 public class MemberController {
 
-    @Autowired
-    private MemberRepository memberRepository;
 
-    @GetMapping("members")
+    private MemberService memberService;
+
+    @GetMapping
     public List<Member> getAllMembers() {
-        return this.memberRepository.findAll();
+        return null;
     }
 
-    @GetMapping("members/{id}")
-    public ResponseEntity<Member> getMemberById(@PathVariable(value = "id") Long memberId) throws ResourceNotFoundException {
-        Member member = memberRepository.findById(memberId)
-                .orElseThrow(() -> new ResourceNotFoundException("Member not found with id" + memberId));
-        return ResponseEntity.ok().body(member);
+    @GetMapping("/{id}")
+    public ResponseEntity<MemberDto> getMemberById(@PathVariable(value = "id") String memberId) throws ResourceNotFoundException {
+        return null;
     }
 
-    @PostMapping("members")
-    public Member createMember(@RequestBody Member member) {
-        return this.memberRepository.save(member);
+    @PostMapping
+    public String createMember(@RequestBody MemberDto memberDto) throws ExecutionException, InterruptedException {
+        return memberService.create(memberDto);
     }
 
     // TODO -> Update and Delete methods
