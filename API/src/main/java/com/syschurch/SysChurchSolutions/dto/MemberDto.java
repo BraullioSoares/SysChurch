@@ -3,17 +3,12 @@ package com.syschurch.SysChurchSolutions.dto;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.Transient;
 import java.sql.Date;
-import java.util.UUID;
 
 
 @Data
 @Builder
 public class MemberDto {
-
-    @Transient
-    private UUID uuid = UUID.randomUUID();
 
     private String name;
     private String lastName;

@@ -5,6 +5,7 @@ import com.syschurch.SysChurchSolutions.exceptions.ResourceNotFoundException;
 import com.syschurch.SysChurchSolutions.models.Member;
 import com.syschurch.SysChurchSolutions.services.MemberService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,7 @@ public class MemberController {
 
     private MemberService memberService;
 
+
     @GetMapping
     public List<Member> getAllMembers() {
         return null;
@@ -32,6 +34,13 @@ public class MemberController {
     @PostMapping
     public String createMember(@RequestBody MemberDto memberDto) throws ExecutionException, InterruptedException {
         return memberService.create(memberDto);
+    }
+
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteMember(@PathVariable(value = "id") String memberId) {
+         memberService.deleteMember(memberId);
+         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     // TODO -> Update and Delete methods
