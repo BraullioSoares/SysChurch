@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-@RequestMapping("/api/v1/members")
+@RequestMapping("api/v1/members")
 @AllArgsConstructor
 public class MemberController {
 
@@ -22,26 +22,28 @@ public class MemberController {
 
 
     @GetMapping
-    public List<Member> getAllMembers() {
-        return null;
+    public List<MemberDto> getAllMembers() throws ExecutionException, InterruptedException {
+        return memberService.getAllMembers();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<MemberDto> getMemberById(@PathVariable(value = "id") String memberId) throws ResourceNotFoundException {
-        return null;
-    }
 
     @PostMapping
     public String createMember(@RequestBody MemberDto memberDto) throws ExecutionException, InterruptedException {
         return memberService.create(memberDto);
     }
 
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity deleteMember(@PathVariable(value = "id") String memberId) {
-         memberService.deleteMember(memberId);
-         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    @GetMapping("/getMemberDetails")
+    public MemberDto getMemberDetails(@RequestParam String documentId ) throws InterruptedException, ExecutionException{
+        return memberService.getMemberDetails(documentId);
     }
 
-    // TODO -> Update and Delete methods
+    @PutMapping
+    public String updateMemberDetails(@RequestBody MemberDto member  ) throws InterruptedException, ExecutionException {
+        return memberService.updateMemberDetails(member);
+    }
+
+    @DeleteMapping
+    public String deleteMember(@RequestParam String documentId){
+        return memberService.deleteMember(documentId);
+    }
 }

@@ -1,21 +1,19 @@
 package com.syschurch.SysChurchSolutions.services;
 
 import com.syschurch.SysChurchSolutions.dto.MemberDto;
-import com.syschurch.SysChurchSolutions.models.Member;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public interface MemberService {
 
-    List<Member> getMembers() throws ExecutionException, InterruptedException;
-
-    MemberDto findById(String memberId) throws ExecutionException, InterruptedException;
-
-    List<Member> getAllMembers();
+    List<MemberDto> getAllMembers() throws ExecutionException, InterruptedException;
 
     String create(MemberDto member) throws ExecutionException, InterruptedException;
 
-    void deleteMember(String memberId);
+    String deleteMember(String documentId);
+
+    MemberDto getMemberDetails(String document) throws ExecutionException, InterruptedException;
+
+    String updateMemberDetails(MemberDto member) throws ExecutionException, InterruptedException;
 }

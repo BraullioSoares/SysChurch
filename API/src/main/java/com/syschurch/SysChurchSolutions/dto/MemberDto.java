@@ -2,17 +2,18 @@ package com.syschurch.SysChurchSolutions.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 
 
 @Data
-@Builder
+@NoArgsConstructor
 public class MemberDto {
 
     private String name;
     private String lastName;
-    private String document;
+    private String documentId;
     private String gender;
     private Date birthday;
     private Date membershipDate;

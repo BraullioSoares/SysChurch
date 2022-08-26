@@ -2,7 +2,6 @@ package com.syschurch.SysChurchSolutions.services;
 
 import com.syschurch.SysChurchSolutions.client.FirebaseClient;
 import com.syschurch.SysChurchSolutions.dto.MemberDto;
-import com.syschurch.SysChurchSolutions.models.Member;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,50 +17,27 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public List<Member> getMembers() throws ExecutionException, InterruptedException {
-    /*    Firestore dbFirestore = FirestoreClient.getFirestore();
-        DocumentReference documentReference = dbFirestore.collection(COLLECTION_NAME).document();
-        ApiFuture<DocumentSnapshot> future = documentReference.get();
-        DocumentSnapshot document = future.get();*/
-
-        return null;
-
-    }
-
-    @Override
-    public MemberDto findById(String memberId) throws ExecutionException, InterruptedException {
-/*        Firestore dbFirestore = FirestoreClient.getFirestore();
-        DocumentReference documentReference = dbFirestore.collection(COLLECTION_NAME).document(memberId);
-        ApiFuture<DocumentSnapshot> future = documentReference.get();
-        DocumentSnapshot document = future.get();
-        MemberDto member;
-
-        if (document.exists()){
-            member = document.toObject(MemberDto.class);
-            return member;
-        }*/
-        return null;
-    }
-
-    @Override
-    public List<Member> getAllMembers() {
-        return null;
+    public List<MemberDto> getAllMembers() throws ExecutionException, InterruptedException {
+        return firebaseClient.getAllMembers();
     }
 
     @Override
     public String create(MemberDto member) throws ExecutionException, InterruptedException {
-        return firebaseClient.createUser(member);
+        return firebaseClient.createMember(member);
     }
 
     @Override
-    public void deleteMember(String memberId) {
-        firebaseClient.deleteMemberById(memberId);
+    public String deleteMember(String documentId) {
+       return firebaseClient.deleteMember(documentId);
     }
 
+    @Override
+    public MemberDto getMemberDetails(String documentId) throws ExecutionException, InterruptedException {
+        return firebaseClient.getMemberDetails(documentId);
+    }
 
-/*    public String deleteMember(String name) {
-        Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> writeResult = dbFirestore.collection(COL_NAME).document(name).delete();
-        return "Document with Patient ID "+name+" has been deleted";
-    }*/
+    @Override
+    public String updateMemberDetails(MemberDto member) throws ExecutionException, InterruptedException {
+       return firebaseClient.updateMemberDetails(member);
+    }
 }
