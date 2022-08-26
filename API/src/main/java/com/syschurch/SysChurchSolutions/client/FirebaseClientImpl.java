@@ -9,6 +9,8 @@ import com.google.firebase.cloud.FirestoreClient;
 import com.syschurch.SysChurchSolutions.dto.MemberDto;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -53,14 +55,25 @@ public class FirebaseClientImpl implements FirebaseClient {
 
     @Override
     public List<MemberDto> getAllMembers() throws ExecutionException, InterruptedException {
-/*        Firestore dbFirestore = FirestoreClient.getFirestore();
-        DocumentReference documentReference = dbFirestore.collection(COLLECTION_NAME).document();
-        ApiFuture<DocumentSnapshot> future = documentReference.get();
-        DocumentSnapshot document = future.get();
 
-        List<MemberDto> member = document.toObject(MemberDto.class);
-        return member;*/
-        return null;
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+
+        Iterable<DocumentReference> documentReference = dbFirestore.collection(COLLECTION_NAME).listDocuments();
+        Iterator<DocumentReference> iterator = documentReference.iterator();
+
+        List<MemberDto> memberList = new ArrayList<>();
+        MemberDto member = null;
+
+        while (iterator.hasNext()){
+            DocumentReference docReference = iterator.next();
+            ApiFuture<DocumentSnapshot> future = docReference.get();
+            DocumentSnapshot document = future.get();
+
+            member = document.toObject(MemberDto.class);
+            memberList.add(member);
+        }
+
+        return memberList;
 
     }
 
