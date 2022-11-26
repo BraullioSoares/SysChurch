@@ -1,19 +1,13 @@
+import Sidenav from "./components/content/Sidenav/Sidenav";
+import Header from "./components/content/Header/Header";
+import MainContent from "./components/content/MainContent/MainContent";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="syschurch-app container">
+      <Sidenav/>
+      <Header/>
+      <MainContent/>
     </div>
   );
 }
