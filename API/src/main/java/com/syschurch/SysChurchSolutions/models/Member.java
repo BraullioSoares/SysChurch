@@ -1,49 +1,34 @@
 package com.syschurch.SysChurchSolutions.models;
 
-import javax.persistence.*;
 import java.sql.Date;
 
-@Entity
-@Table(name = "members")
+
 public class Member {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private long id;
 
-    @Column(name = "first_name")
     private String name;
 
-    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "document")
     private String document;
 
-    @Column(name = "gender")
     private String gender;
 
-    @Column(name = "birth_day")
     private Date birthday;
 
-    @Column(name = "membership_date")
     private Date membershipDate;
 
-    @Column(name = "role")
     private String role;
 
-    @Column(name = "address")
     private String address;
 
-    @Column(name = "marital_state")
     private String maritalState;
 
-    @Column(name = "phone")
     private String phone;
 
-    @Column(name = "email")
     private String email;
 
-    @Column(name = "is_baptizied")
     private Boolean isBaptizedOnHolySpirit;
 
     public Member() {
@@ -63,5 +48,109 @@ public class Member {
         this.phone = phone;
         this.email = email;
         this.isBaptizedOnHolySpirit = isBaptizedOnHolySpirit;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getDocument() {
+        return document;
+    }
+
+    public void setDocument(String document) {
+        this.document = document;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public Date getMembershipDate() {
+        return membershipDate;
+    }
+
+    public void setMembershipDate(Date membershipDate) {
+        this.membershipDate = membershipDate;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getMaritalState() {
+        return maritalState;
+    }
+
+    public void setMaritalState(String maritalState) {
+        this.maritalState = maritalState;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Boolean getBaptizedOnHolySpirit() {
+        return isBaptizedOnHolySpirit;
+    }
+
+    public void setBaptizedOnHolySpirit(Boolean baptizedOnHolySpirit) {
+        isBaptizedOnHolySpirit = baptizedOnHolySpirit;
     }
 }
