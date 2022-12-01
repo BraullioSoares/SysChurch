@@ -1,7 +1,7 @@
 function Sidenav() {
     return (
-        <div className="sidenav">
-            SideNav
+        <div>
+            SideNav     
         </div>    
     )
 }

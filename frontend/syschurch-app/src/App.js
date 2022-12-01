@@ -1,12 +1,16 @@
 import Sidenav from "./components/content/Sidenav/Sidenav";
 import Header from "./components/content/Header/Header";
 import MainContent from "./components/content/MainContent/MainContent";
+import './global.css'
 
 function App() {
   return (
-    <div className="syschurch-app container">
+    <div>
       <Sidenav/>
-      <Header/>
+      <header className="container-app">
+        <Header/>
+      </header>
+      
       <MainContent/>
     </div>
   );

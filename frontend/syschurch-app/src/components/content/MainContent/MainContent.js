@@ -1,6 +1,8 @@
 function MainContent() {
     return(
-        <div>Main Content</div>
+        <div>
+            MainContent
+        </div>
     )
 }
 
