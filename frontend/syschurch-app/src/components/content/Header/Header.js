@@ -7,9 +7,9 @@ function Header() {
             <h1>
                 ASSEMBLÉIA DE DEUS
             </h1>               
-            <h3>
+            <h5>
                 MIN. SÃO GOTARDO-MG
-            </h3>
+            </h5>
             <Search />           
         </header>
     )

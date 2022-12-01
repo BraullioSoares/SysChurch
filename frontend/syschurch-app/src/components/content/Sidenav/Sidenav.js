@@ -1,8 +1,10 @@
+import './SideNav.css'
+
 function Sidenav() {
     return (
-        <div>
-            SideNav     
-        </div>    
+        <nav className="container-nav">
+            SideNav            
+        </nav>    
     )
 }
 

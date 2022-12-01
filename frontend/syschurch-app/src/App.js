@@ -5,15 +5,23 @@ import './global.css'
 
 function App() {
   return (
-    <div>
-      <Sidenav/>
-      <header className="container-app">
-        <Header/>
-      </header>
-      
-      <MainContent/>
+    <div className="container-app">
+        <div className="row">
+            <div className="col">
+                <Sidenav/>
+            </div>
+            
+            <div className="col-10">
+                  <header className="container-headerApp">
+                      <Header/>
+                  </header>
+            
+                  <div className="row">
+                    <MainContent/>
+                  </div>
+            </div>
+          </div>
     </div>
   );
 }
-
 export default App;
