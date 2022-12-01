@@ -14,10 +14,17 @@
     
 }
 
+/* 
+BARRA DE PESQUISA SEARCH
+*/
 .width-search{
     width: 75%;
     margin-top: 20px;
 }
+
+/* 
+ICONE DA BARRA SEARCH
+*/
 
 .button-search{
     font-size: 30px;
