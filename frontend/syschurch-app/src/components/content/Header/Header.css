@@ -13,3 +13,12 @@
     box-shadow: inset 10px 10px 5px 0px #708090  ;
     
 }
+
+.width-search{
+    width: 75%;
+    margin-top: 20px;
+}
+
+.button-search{
+    font-size: 30px;
+}
