@@ -1,7 +1,12 @@
+import MemberList from "../MemberList/MemberList";
+
 function MainContent() {
+    
     return(
         <div>
-            MainContent
+            Main Content 
+            <br/>
+            <MemberList/>
         </div>
     )
 }
