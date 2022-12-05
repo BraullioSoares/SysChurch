@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import "./MainContent.css"
 
 function MainContent() {
+    
     return(
         <div className="container-mainContent">
            <Container>  
