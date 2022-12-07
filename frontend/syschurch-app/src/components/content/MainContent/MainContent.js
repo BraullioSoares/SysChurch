@@ -1,11 +1,12 @@
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import "./MainContent.css"
+import "./MainContent.css";
 
 function MainContent() {
     
-    return(
+    return (
         <div className="container-mainContent">
            <Container>  
                 <h5 className='h6-MainContent'>Acesso Rápido</h5>   
