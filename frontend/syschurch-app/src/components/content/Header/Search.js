@@ -1,5 +1,5 @@
 import { Button, Form, InputGroup } from 'react-bootstrap';
-import { FcSearch, IconName } from "react-icons/fc";
+import { FcSearch} from "react-icons/fc";
 
 //Component de Busca com Icon de search
 
