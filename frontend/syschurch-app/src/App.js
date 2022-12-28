@@ -1,27 +1,20 @@
-import Sidenav from "./components/content/Sidenav/Sidenav";
-import Header from "./components/content/Header/Header";
-import MainContent from "./components/content/MainContent/MainContent";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Home from './components/content/Home/Home';
+import TestFinancas from './components/content/TESTE/TestFinancas';
+import TestADM from './components/content/TESTE/TestADM';
+import TestSocial from './components/content/TESTE/TestSocial';
 import './global.css'
 
 function App() {
   return (
-    <div className="container-app">
-        <div className="row">
-            <div className="col">
-                <Sidenav/>
-            </div>
-            
-            <div className="col-10">
-                  <header className="container-headerApp">
-                      <Header/>
-                  </header>
-            
-                  <div className="row">
-                    <MainContent/>
-                  </div>
-            </div>
-          </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/administracao" element={<TestADM />} />
+        <Route path="/financas" element={<TestFinancas />} />
+        <Route path="/social" element={<TestSocial />} />
+      </Routes>  
+    </BrowserRouter>
   );
 }
 export default App;

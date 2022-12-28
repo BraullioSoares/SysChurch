@@ -31,10 +31,21 @@
     margin-top: 10px;
 }
 
-.sideNave-nav-link:hover{
+.sideNave-ul {
+    list-style: none;  
+    padding: 0px; 
+}
+
+.sideNave-li a{
+    text-decoration: none;
+    
+}
+
+.sideNave-li a:hover{
+    
     background-color: white; 
-    padding: 10x;
-    border-radius: 25px;   
-    text-align: center;
-    font-weight: 600;
+    padding: 10px;
+    border-radius: 20px;   
+    text-align: end;
+    font-weight: 700;   
 }

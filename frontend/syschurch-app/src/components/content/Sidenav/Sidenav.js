@@ -1,4 +1,4 @@
-import Nav from 'react-bootstrap/Nav';
+import {Link} from 'react-router-dom';
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { BsList } from "react-icons/bs";
 import './SideNav.css'
@@ -15,11 +15,23 @@ function Sidenav() {
                 <h6>Pr. Francisco Batista</h6>
             </div>            
 
-            <nav defaultActiveKey="/home" className="flex-column " >
-                <Nav.Link className="sideNave-nav-link" href="/home">Administração</Nav.Link>
-                <Nav.Link className="sideNave-nav-link" href="/Finanças">Finanças</Nav.Link>
-                <Nav.Link className="sideNave-nav-link" href="/Social">Social</Nav.Link>
-                <Nav.Link className="sideNave-nav-link" href="/Sair">Sair</Nav.Link>                
+            <nav>
+                
+                <ul className='sideNave-ul'>
+                    <li className="sideNave-li">
+                        <Link to="/TestADM">Administração</Link>
+                    </li>
+                    <li className="sideNave-li">
+                        <Link to="/TestFinancas" className="sideNave-link">Finanças</Link>
+                    </li>
+                    <li className="sideNave-li">
+                        <Link to="/TestSocial">Social</Link>
+                    </li>
+                    <li className="sideNave-li">
+                        <Link to="/">Sair</Link>
+                    </li>
+                </ul>
+                
             </nav> 
         </div>   
         
