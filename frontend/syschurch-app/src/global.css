@@ -3,12 +3,3 @@ body {
     box-sizing: border-box;
     background-color: #d3d3d3;   
 }
-
-.container-app {
-    padding: 10px;
-}
-
-.col{
-    padding-left: 0;
-    padding-right: 0;
-}
