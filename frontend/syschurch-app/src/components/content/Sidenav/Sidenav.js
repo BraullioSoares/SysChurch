@@ -3,6 +3,7 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 import { BsList } from "react-icons/bs";
 import './SideNav.css'
 
+
 function Sidenav() {
     return (
         <div className='container-nav'>
@@ -15,8 +16,7 @@ function Sidenav() {
                 <h6>Pr. Francisco Batista</h6>
             </div>            
 
-            <nav>
-                
+            <nav>                
                 <ul className='sideNave-ul'>
                     <li className="sideNave-li">
                         <Link to="/TestADM">Administração</Link>
@@ -30,8 +30,7 @@ function Sidenav() {
                     <li className="sideNave-li">
                         <Link to="/">Sair</Link>
                     </li>
-                </ul>
-                
+                </ul>                
             </nav> 
         </div>   
         

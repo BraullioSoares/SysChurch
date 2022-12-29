@@ -15,7 +15,7 @@
     height: 20vh;
     margin: 10px;    
     font-size: 20px;     
-    padding-top: 5px;   
+    padding-top: 50px;   
 }
 
 .bottom-MainContent{
@@ -25,6 +25,20 @@
     height: 20vh;
     border-radius: 5px 30px;
     box-shadow: inset -10px -10px 5px 5px #708090;    
+}
+
+.link-MainContent{
+
+    background-color: #B0C4DE;
+    border: 1px solid gray;
+    padding: 50px;
+        
+    border-radius: 10px 30px;
+    box-shadow: inset -10px -10px 5px 5px #708090;    
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    font-weight: bold;
 }
 
 .h6-MainContent{
